@@ -7,13 +7,16 @@ import java.util.Date;
 public class DateValidator {
 
     //for checking dates
-    public boolean isDateValid(String dateToValidate, String dateFromat){
+    public boolean isDateValid(String dateToValidate, String dateFormat){
 
         if(dateToValidate == null){
             return false;
         }
+        if (dateFormat== null){
+            return false;
+        }
 
-        SimpleDateFormat sdf = new SimpleDateFormat(dateFromat);
+        SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
         sdf.setLenient(false);
 
         try {
