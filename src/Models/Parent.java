@@ -6,7 +6,7 @@ public class Parent {
     private String parent_last_name;
     private String parent_phone;
     private String parent_email;
-    private String address_id;
+
 
 
     public Parent() {
@@ -18,7 +18,7 @@ public class Parent {
         this.parent_last_name = parent_last_name;
         this.parent_phone = parent_phone;
         this.parent_email = parent_email;
-        this.address_id = address_id;
+
     }
 
     public int getAdress_id() { return adress_id; }
@@ -41,5 +41,4 @@ public class Parent {
 
     public void setParent_email(String parent_email) { this.parent_email = parent_email; }
 
-    public void setAddress_id(String address_id) { this.address_id = address_id; }
 }
