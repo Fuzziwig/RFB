@@ -6,7 +6,12 @@ import Service.ChildService;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+
 public class ChildController {
+
+    enum Stue {
+        RØD, BLÅ, VENTELISTE
+    }
 
     ChildService cs = new ChildService();
 
@@ -27,13 +32,29 @@ public class ChildController {
         String firstName = sc.nextLine();
         //child.setChildFirstName(firstName);
 
-        System.out.println("Efternavn på barn");
+        System.out.println("Efternavn på barn: ");
         String lastName = sc.nextLine();
         //child.setChildFirstName(lastName);
 
-        System.out.println("Stue på barn");
-        String location = sc.nextLine();
-        //child.setChildFirstName(location);
+        System.out.println("Stue på barn, tast r for Rød, b for blå eller v for venteliste:");
+        String location= "";
+        //Stue s;
+
+        String valg = sc.nextLine();
+        switch (valg) {
+            case "r":
+              //  s = Stue.RØD;
+                location = "RØD STUE";
+                break;
+            case "b":
+             //   s = Stue.BLÅ;
+                location = "BLÅ STUE";
+                break;
+            case "v":
+            //    s = Stue.VENTELISTE;
+                location = "VENTELISTE";
+                break;
+        }
 
         System.out.println("Ekstra info på barnet: ");
         String info = sc.nextLine();

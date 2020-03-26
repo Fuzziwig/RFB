@@ -14,23 +14,23 @@ public class ChildRepository {
         this.con = msc.create();
     }
 
-    public void createChild(int cprNrID, int dateOfEntry, String childFirstName, String childLastName, String location, String childrenInfo)throws SQLException {
-        String sql ="INSERT INTO childrenTable(cprNrID, dateOfEntry, childFirstName, childLastName, location, childrenInfo)"+"VALUES (?,?,?,?,?,?)";
+    public void createChild(int cpr_nr, int date_of_entry, String child_first_name, String child_last_name, String location, String children_info)throws SQLException {
+        String sql ="INSERT INTO children_table(cpr_nr, date_of_entry, child_first_name, child_last_name, location, children_info)"+"VALUES (?,?,?,?,?,?)";
         //A SQL statement is precompiled and stored in a PreparedStatement object. This object can then be used to efficiently execute this statement multiple times.
         PreparedStatement preparedStatement = con.prepareStatement(sql);
-        preparedStatement.setInt(1,cprNrID);
-        preparedStatement.setInt(2,dateOfEntry);
-        preparedStatement.setString(3,childFirstName);
-        preparedStatement.setString(4,childLastName);
+        preparedStatement.setInt(1,cpr_nr);
+        preparedStatement.setInt(2,date_of_entry);
+        preparedStatement.setString(3,child_first_name);
+        preparedStatement.setString(4,child_last_name);
         preparedStatement.setString(5,location);
-        preparedStatement.setString(6,childrenInfo);
+        preparedStatement.setString(6,children_info);
         preparedStatement.execute();
         preparedStatement.close();
     }
 
     //Execute a query
     public ResultSet readChildren() throws SQLException {
-        String sql = "SELECT * FROM rfb.childrentable";
+        String sql = "SELECT * FROM rfb.children_table";
         Statement stmt = con.createStatement();
         try {
             ResultSet rs = stmt.executeQuery(sql);
@@ -41,23 +41,23 @@ public class ChildRepository {
         return null;
     }
 
-    public void updateChild(int dateOfEntry, String childFirstName, String childLastName, String location, String childrenInfo, int cprNrID) throws SQLException {
-        String sql = "UPDATE rfb.childrentable SET dateOfEntry=?, childFirstName=?, childLastName=?, location=?, childrenInfo=? WHERE cprNrID=?";
+    public void updateChild(int date_of_entry, String child_first_name, String child_last_name, String location, String children_info, int cpr_nr) throws SQLException {
+        String sql = "UPDATE rfb.childrentable SET date_of_entry=?, child_first_name=?, child_last_name=?, location=?, children_info=? WHERE cpr_nr=?";
         PreparedStatement preparedStatement = con.prepareStatement(sql);
-        preparedStatement.setInt(1,dateOfEntry);
-        preparedStatement.setString(2,childFirstName);
-        preparedStatement.setString(3,childLastName);
+        preparedStatement.setInt(1,date_of_entry);
+        preparedStatement.setString(2,child_first_name);
+        preparedStatement.setString(3,child_last_name);
         preparedStatement.setString(4,location);
-        preparedStatement.setString(5,childrenInfo);
-        preparedStatement.setInt(6,cprNrID);
+        preparedStatement.setString(5,children_info);
+        preparedStatement.setInt(6,cpr_nr);
         preparedStatement.execute();
         preparedStatement.close();
     }
 
-    public void deleteChild(int cprNrID) throws SQLException {
-        String sql = "DELETE FROM rfb.childrentable WHERE cprNrID=?";
+    public void deleteChild(int cpr_nr) throws SQLException {
+        String sql = "DELETE FROM rfb.children_table WHERE cprNrID=?";
         PreparedStatement preparedStatement = con.prepareStatement(sql);
-        preparedStatement.setInt(1,cprNrID);
+        preparedStatement.setInt(1,cpr_nr);
         preparedStatement.execute();
         preparedStatement.close();
     }

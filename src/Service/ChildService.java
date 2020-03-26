@@ -10,7 +10,7 @@ public class ChildService {
     ChildRepository cr = new ChildRepository();
 
     public void createChild(Child child) throws SQLException {
-        cr.createChild(child.getCprNrID(),child.getDateOfEntry(),child.getChildFirstName(),child.getChildLastName(),child.getLocation(),child.getChildrenInfo());
+        cr.createChild(child.getCpr_nr(),child.getDate_of_entry(),child.getChild_first_name(),child.getChild_last_name(),child.getLocation(),child.getChildren_info());
     }
 
     public void readChildren() throws SQLException {
@@ -37,7 +37,7 @@ public class ChildService {
     }
 
     public void updateChild(Child child) throws SQLException {
-        cr.updateChild(child.getDateOfEntry(),child.getChildFirstName(),child.getChildLastName(),child.getLocation(),child.getChildrenInfo(),child.getCprNrID());
+        cr.updateChild(child.getDate_of_entry(),child.getChild_first_name(),child.getChild_last_name(),child.getLocation(),child.getChildren_info(),child.getCpr_nr());
     }
 
     public void deleteChild(int cprNrID) throws SQLException {

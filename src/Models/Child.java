@@ -1,55 +1,55 @@
 package Models;
 
 public class Child {
-    private int cprNrID;
-    private int dateOfEntry;
-    private String childFirstName;
-    private String childLastName;
+    private int cpr_nr;
+    private int date_of_entry;
+    private String child_first_name;
+    private String child_last_name;
     private String location;
-    private String childrenInfo;
+    private String children_info;
 
     public Child() {
     }
 
-    public Child(int cprNrID, int dateOfEntry, String childFirstName, String childLastName, String location, String childrenInfo) {
-        this.cprNrID = cprNrID;
-        this.dateOfEntry = dateOfEntry;
-        this.childFirstName = childFirstName;
-        this.childLastName = childLastName;
+    public Child(int cpr_nr, int date_of_entry, String child_first_name, String child_last_name, String location, String children_info) {
+        this.cpr_nr = cpr_nr;
+        this.date_of_entry = date_of_entry;
+        this.child_first_name = child_first_name;
+        this.child_last_name = child_last_name;
         this.location = location;
-        this.childrenInfo = childrenInfo;
+        this.children_info = children_info;
     }
 
-    public int getCprNrID() {
-        return cprNrID;
+    public int getCpr_nr() {
+        return cpr_nr;
     }
 
-    public void setCprNrID(int cprNrID) {
-        this.cprNrID = cprNrID;
+    public void setCpr_nr(int cpr_nr) {
+        this.cpr_nr = cpr_nr;
     }
 
-    public int getDateOfEntry() {
-        return dateOfEntry;
+    public int getDate_of_entry() {
+        return date_of_entry;
     }
 
-    public void setDateOfEntry(int dateOfEntry) {
-        this.dateOfEntry = dateOfEntry;
+    public void setDate_of_entry(int date_of_entry) {
+        this.date_of_entry = date_of_entry;
     }
 
-    public String getChildFirstName() {
-        return childFirstName;
+    public String getChild_first_name() {
+        return child_first_name;
     }
 
-    public void setChildFirstName(String childFirstName) {
-        this.childFirstName = childFirstName;
+    public void setChild_first_name(String child_first_name) {
+        this.child_first_name = child_first_name;
     }
 
-    public String getChildLastName() {
-        return childLastName;
+    public String getChild_last_name() {
+        return child_last_name;
     }
 
-    public void setChildLastName(String childLastName) {
-        this.childLastName = childLastName;
+    public void setChild_last_name(String child_last_name) {
+        this.child_last_name = child_last_name;
     }
 
     public String getLocation() {
@@ -60,11 +60,11 @@ public class Child {
         this.location = location;
     }
 
-    public String getChildrenInfo() {
-        return childrenInfo;
+    public String getChildren_info() {
+        return children_info;
     }
 
-    public void setChildrenInfo(String childrenInfo) {
-        this.childrenInfo = childrenInfo;
+    public void setChildren_info(String children_info) {
+        this.children_info = children_info;
     }
 }
