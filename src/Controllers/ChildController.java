@@ -48,6 +48,7 @@ public class ChildController {
                 break;
             case "b":
              //   s = Stue.BLÅ;
+
                 location = "BLÅ STUE";
                 break;
             case "v":

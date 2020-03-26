@@ -1,6 +1,8 @@
 package Models;
 
 public class Parent {
+
+    private int parent_id;
     private int adress_id;
     private String parent_first_name;
     private String parent_last_name;
@@ -9,10 +11,12 @@ public class Parent {
 
 
 
+
     public Parent() {
     }
 
-    public Parent(int adress_id, String parent_first_name, String parent_last_name, String parent_phone, String parent_email, String address_id) {
+    public Parent(int parent_id, int adress_id, String parent_first_name, String parent_last_name, String parent_phone, String parent_email, String address_id) {
+        this.parent_id = parent_id;
         this.adress_id = adress_id;
         this.parent_first_name = parent_first_name;
         this.parent_last_name = parent_last_name;
@@ -20,6 +24,8 @@ public class Parent {
         this.parent_email = parent_email;
 
     }
+
+    public int getParent_id() { return parent_id; }
 
     public int getAdress_id() { return adress_id; }
 
@@ -31,6 +37,8 @@ public class Parent {
 
     public String getParent_email() { return parent_email; }
 
+    public void setParent_id(int parent_id) { this.parent_id = parent_id; }
+
     public void setAdress_id(int adress_id) { this.adress_id = adress_id; }
 
     public void setParent_first_name(String parent_first_name) { this.parent_first_name = parent_first_name; }
@@ -40,5 +48,6 @@ public class Parent {
     public void setParent_phone(String parent_phone) { this.parent_phone = parent_phone; }
 
     public void setParent_email(String parent_email) { this.parent_email = parent_email; }
+
 
 }
