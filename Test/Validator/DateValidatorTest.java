@@ -15,6 +15,7 @@ class DateValidatorTest {
         assertFalse(s.isDateValid(null, null));
         assertFalse(s.isDateValid("32/02/2012", "dd/MM/yyyy"));
         assertTrue(s.isDateValid("29/02/2012", "dd/MM/yyyy"));
+        assertTrue(s.isDateValid("290212", "ddMMyy"));
     }
 
 }
