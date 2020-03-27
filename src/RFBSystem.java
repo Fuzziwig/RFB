@@ -1,5 +1,5 @@
 import Controllers.ChildController;
-import Controllers.EmployeeController;
+import Controllers.ParentController;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -9,7 +9,8 @@ public class RFBSystem {
     public static void main(String[] args) throws SQLException {
         boolean isRunning = true;
         ChildController childController = new ChildController();
-        EmployeeController employeeController = new EmployeeController();
+        ParentController pc = new ParentController();
+
         //bare en kommentar
 
         while(isRunning) {
@@ -24,16 +25,20 @@ public class RFBSystem {
             //Start menuen
             switch(menuChoice) {
                 case 1:
-                    employeeController.createEmployee();//childController.createChild();
+                    //childController.createChild();
+                    pc.createParent();
                     break;
                 case 2:
-                    childController.readChildren();
+                    //childController.readChildren();
+                    pc.readParent();
                     break;
                 case 3:
-                    childController.updateChild();
+                    //childController.updateChild();
+                    pc.updateParent();
                     break;
                 case 4:
-                    childController.deleteChild();
+                    //childController.deleteChild();
+                    pc.deleteParent();
                     break;
                 case 5:
                     isRunning = false;
@@ -43,8 +48,6 @@ public class RFBSystem {
                     isRunning = false;
                     break;
             }
-
-
         }
     }
 }
