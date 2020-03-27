@@ -42,7 +42,7 @@ public class ChildRepository {
     }
 
     public void updateChild(int date_of_entry, String child_first_name, String child_last_name, String location, String children_info, int cpr_nr) throws SQLException {
-        String sql = "UPDATE rfb.childrentable SET date_of_entry=?, child_first_name=?, child_last_name=?, location=?, children_info=? WHERE cpr_nr=?";
+        String sql = "UPDATE rfb.children_table SET date_of_entry=?, child_first_name=?, child_last_name=?, location=?, children_info=? WHERE cpr_nr=?";
         PreparedStatement preparedStatement = con.prepareStatement(sql);
         preparedStatement.setInt(1,date_of_entry);
         preparedStatement.setString(2,child_first_name);

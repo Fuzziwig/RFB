@@ -14,16 +14,16 @@ public class ParentRepository {
         this.con = msc.create();
     }
 
-    public void createParent(int parent_id, int adress_id, String parent_first_name, String parent_last_name, String parent_phone, String parent_email) throws SQLException {
-        String sql = "INSERT INTO createParent(parent_id,adress_id, parent_first_name, parent_last_name, parent_phone, parent_email)" + "VALUES (?,?,?,?,?,?)";
+    public void createParent(int parent_id, String parent_first_name, String parent_last_name, String parent_phone, String parent_email, int address_id) throws SQLException {
+        String sql = "INSERT INTO parent_table(parent_id, parent_first_name, parent_last_name, parent_phone, parent_email, address_id)" + "VALUES (?,?,?,?,?,?)";
 
         PreparedStatement preparedStatement = con.prepareStatement(sql);
         preparedStatement.setInt(1, parent_id);
-        preparedStatement.setInt(2, adress_id);
-        preparedStatement.setString(3, parent_first_name);
-        preparedStatement.setString(4, parent_last_name);
-        preparedStatement.setString(5, parent_phone);
-        preparedStatement.setString(6, parent_email);
+        preparedStatement.setString(2, parent_first_name);
+        preparedStatement.setString(3, parent_last_name);
+        preparedStatement.setString(4, parent_phone);
+        preparedStatement.setString(5, parent_email);
+        preparedStatement.setInt(6, address_id);
         preparedStatement.execute();
         preparedStatement.close();
     }
@@ -39,16 +39,16 @@ public class ParentRepository {
         }
         return null;
     }
-    public void updateParent(int parent_id, int adress_id, String parent_first_name, String parent_last_name, String parent_phone, String parent_email) throws SQLException {
-        String sql = "UPDATE rfb.parent_table SET parent_id=?, adress_id=?, parent_first_name=?, parent_last_name=?, parent_phone=?, parent_email=? WHERE parent_id=?";
+    public void updateParent(String parent_first_name, String parent_last_name, String parent_phone, String parent_email, int address_id, int parent_id) throws SQLException {
+        String sql = "UPDATE rfb.parent_table SET parent_first_name=?, parent_last_name=?, parent_phone=?, parent_email=?, address_id=? WHERE parent_id=?";
 
         PreparedStatement preparedStatement = con.prepareStatement(sql);
-        preparedStatement.setInt(1, parent_id);
-        preparedStatement.setInt(2, adress_id);
-        preparedStatement.setString(3, parent_first_name);
-        preparedStatement.setString(4, parent_last_name);
-        preparedStatement.setString(5, parent_phone);
-        preparedStatement.setString(6, parent_email);
+        preparedStatement.setString(1, parent_first_name);
+        preparedStatement.setString(2, parent_last_name);
+        preparedStatement.setString(3, parent_phone);
+        preparedStatement.setString(4, parent_email);
+        preparedStatement.setInt(5, address_id);
+        preparedStatement.setInt(6, parent_id);
         preparedStatement.execute();
         preparedStatement.close();
     }
