@@ -1,5 +1,7 @@
 import Controllers.ChildController;
+import Controllers.EmployeeController;
 import Controllers.ParentController;
+import Models.Employee;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -10,6 +12,7 @@ public class RFBSystem {
         boolean isRunning = true;
         ChildController childController = new ChildController();
         ParentController pc = new ParentController();
+        EmployeeController ec = new EmployeeController();
 
         //bare en kommentar
 
@@ -25,19 +28,23 @@ public class RFBSystem {
             //Start menuen
             switch(menuChoice) {
                 case 1:
-                    childController.createChild();
+                    //childController.createChild();
+                    ec.createEmployee();
                     //pc.createParent();
                     break;
                 case 2:
-                    childController.readChildren();
+                    //childController.readChildren();
+                    ec.readEmployee();
                     //pc.readParent();
                     break;
                 case 3:
-                    childController.updateChild();
+                    //childController.updateChild();
+                    ec.updateEmployee();
                     //pc.updateParent();
                     break;
                 case 4:
-                    childController.deleteChild();
+                    //childController.deleteChild();
+                    ec.deleteEmployee();
                     //pc.deleteParent();
                     break;
                 case 5:
