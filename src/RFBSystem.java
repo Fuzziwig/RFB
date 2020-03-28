@@ -28,8 +28,8 @@ public class RFBSystem {
             //Start menuen
             switch(menuChoice) {
                 case 1:
-                    //childController.createChild();
-                    ec.createEmployee();
+                    childController.createChild();
+                    //ec.createEmployee();
                     //pc.createParent();
                     break;
                 case 2:

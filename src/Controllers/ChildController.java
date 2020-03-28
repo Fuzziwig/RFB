@@ -4,6 +4,7 @@ import Models.Child;
 import Service.ChildService;
 
 
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -15,33 +16,43 @@ public class ChildController {
     }
 
     ChildService cs = new ChildService();
+    UserController uc = new UserController();
 
     public void createChild() throws SQLException {
         //Models.Child child = new Models.Child();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("CPR nr på barn: ");
-        int cprNr = sc.nextInt();
+        //System.out.println("CPR nr på barn: ");
+        //int cprNr = sc.nextInt();
+        int cprNr = uc.readCPR("CPR nr på barn: ", "Indtast et gyldigt CPR nr (format : 2312182525)");
 
-        System.out.println("Datoen for indskrivelse af barn: ");
-        int dateOfEntry = sc.nextInt();
+        //System.out.println("Datoen for indskrivelse af barn: ");
+        //int dateOfEntry = sc.nextInt();
+        int dateOfEntry = 0; //placeholder til vi får Dateformat sat op i database
+        java.sql.Date dateOfEntry2 = uc.readDate("Datoen for indskrivelse af barn: ", "Indtast en gyldig dato (format : 29/02/2012)");
         //Har sat en ekstra sc.nextLine() her da der en bug i java som gør den ellers
         //ville have spruget "Fornavn på barn" over.
-        sc.nextLine();
+        //sc.nextLine();
 
-        System.out.println("Fornavn på barn: ");
-        String firstName = sc.nextLine();
+
+        //System.out.println("Fornavn på barn: ");
+        //String firstName = sc.nextLine();
         //child.setChildFirstName(firstName);
+        String firstName = uc.readName("Fornavn på barn: ", "Indtast et gyldigt navn med bogstaver");
 
-        System.out.println("Efternavn på barn: ");
-        String lastName = sc.nextLine();
+
+        //System.out.println("Efternavn på barn: ");
+        //String lastName = sc.nextLine();
         //child.setChildFirstName(lastName);
+        String lastName = uc.readName("Efternavn på barn: ", "Indtast et gyldigt navn med bogstaver");
 
+        String location= uc.readLocation("Stue på barn, tast r for Rød, b for blå eller v for venteliste:", "Indtast et gyldigt bogstav");
+/*
         System.out.println("Stue på barn, tast r for Rød, b for blå eller v for venteliste:");
         String location= "";
         //Stue s;
 
-        String valg = sc.nextLine();
+       String valg = sc.nextLine();
         switch (valg) {
             case "r":
               //  s = Stue.RØD;
@@ -56,7 +67,8 @@ public class ChildController {
             //    s = Stue.VENTELISTE;
                 location = "VENTELISTE";
                 break;
-        }
+        }*/
+        //String valg
 
         System.out.println("Ekstra info på barnet: ");
         String info = sc.nextLine();
