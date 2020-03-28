@@ -38,13 +38,13 @@ public class ChildController {
         //System.out.println("Fornavn på barn: ");
         //String firstName = sc.nextLine();
         //child.setChildFirstName(firstName);
-        String firstName = uc.readName("Fornavn på barn: ", "Indtast et gyldigt navn med bogstaver");
+        String firstName = uc.readName("Fornavn på barn: ", "Indtast et gyldigt navn med bogstaver", 45);
 
 
         //System.out.println("Efternavn på barn: ");
         //String lastName = sc.nextLine();
         //child.setChildFirstName(lastName);
-        String lastName = uc.readName("Efternavn på barn: ", "Indtast et gyldigt navn med bogstaver");
+        String lastName = uc.readName("Efternavn på barn: ", "Indtast et gyldigt navn med bogstaver", 45);
 
         String location= uc.readLocation("Stue på barn, tast r for Rød, b for blå eller v for venteliste:", "Indtast et gyldigt bogstav");
 /*
@@ -69,9 +69,9 @@ public class ChildController {
                 break;
         }*/
         //String valg
-
-        System.out.println("Ekstra info på barnet: ");
-        String info = sc.nextLine();
+        String info = uc.readText("Ekstra info om barnet: ", 255);
+        //System.out.println("Ekstra info på barnet: ");
+        //String info = sc.nextLine();
         Child child = new Child(cprNr,dateOfEntry,firstName,lastName,location,info);
         cs.createChild(child);
     }
