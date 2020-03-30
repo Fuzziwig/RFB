@@ -110,7 +110,7 @@ public class ChildController {
     }
 
     public void deleteChild() throws SQLException {
-        System.out.println("Hvilket bare vil du gerne slette fra databasen? ");
+        System.out.println("Hvilket barn vil du gerne slette fra databasen? ");
         System.out.println("indtast cpr nr på barn for at slette det barn");
         Scanner sc = new Scanner(System.in);
         int cprNrID = sc.nextInt();

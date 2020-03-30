@@ -1,6 +1,6 @@
 package Models;
 
-public class Employee {
+public class Employee extends Account {
     private int employee_id;
     private String employee_first_name;
     private String employee_last_name;
@@ -11,6 +11,10 @@ public class Employee {
     private int address_id;
 
     public Employee() {
+    }
+
+    public Employee(String user, String password){
+        super(user, password);
     }
 
     public Employee(int employee_id, String employee_first_name, String employee_last_name, String employee_title, String employee_phone_number, String employee_email, int workplan_id, int address_id) {
