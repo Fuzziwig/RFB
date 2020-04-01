@@ -82,8 +82,11 @@ public class ChildController {
 
     public void updateChild() throws SQLException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("CPR nr på barn: ");
-        int cprNr = sc.nextInt();
+
+
+       // System.out.println("CPR nr på barn: ");
+        //int cprNr = sc.nextInt();
+        int cprNr = uc.readCPR("CPR nr på barn: ", "Indtast et gyldigt CPR nr (format : 2312182525)");
 
         System.out.println("Datoen for indskrivelse af barn: ");
         int dateOfEntry = sc.nextInt();
@@ -91,20 +94,29 @@ public class ChildController {
         //ville have spruget "Fornavn på barn" over.
         sc.nextLine();
 
-        System.out.println("Fornavn på barn: ");
-        String firstName = sc.nextLine();
+
+        //System.out.println("Fornavn på barn: ");
+        //String firstName = sc.nextLine();
         //child.setChildFirstName(firstName);
+        String firstName = uc.readName("Fornavn på barn: ", "Indtast et gyldigt navn med bogstaver", 45);
 
-        System.out.println("Efternavn på barn");
-        String lastName = sc.nextLine();
+
+        //System.out.println("Efternavn på barn");
+        //String lastName = sc.nextLine();
         //child.setChildFirstName(lastName);
+        String lastName = uc.readName("Efternavn på barn: ", "Indtast et gyldigt navn med bogstaver", 45);
 
-        System.out.println("Stue på barn");
-        String location = sc.nextLine();
+
+        //System.out.println("Stue på barn");
+        //String location = sc.nextLine();
         //child.setChildFirstName(location);
+        String location= uc.readLocation("Stue på barn, tast r for Rød, b for blå eller v for venteliste:", "Indtast et gyldigt bogstav");
 
-        System.out.println("Ekstra info på barnet: ");
-        String info = sc.nextLine();
+
+        //System.out.println("Ekstra info på barnet: ");
+        //String info = sc.nextLine();
+        String info = uc.readText("Ekstra info om barnet: ", 255);
+
         Child child = new Child(cprNr,dateOfEntry,firstName,lastName,location,info);
         cs.updateChild(child);
     }

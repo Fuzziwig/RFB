@@ -10,6 +10,8 @@ import java.util.Scanner;
 public class EmployeeController {
 
     EmployeeService es = new EmployeeService();
+    UserController uc = new UserController();
+
 
     public void createEmployee() throws SQLException {
         Scanner sc = new Scanner(System.in);
@@ -18,8 +20,9 @@ public class EmployeeController {
         int employee_id = sc.nextInt();
         sc.nextLine();
 
-        System.out.println("Fornavn på medarbejder: ");
-        String employee_first_name = sc.nextLine();
+       // System.out.println("Fornavn på medarbejder: ");
+        //String employee_first_name = sc.nextLine();
+        String employee_first_name = uc.readName("Fornavn på medarbejder:","Indtast et gyldigt navn med bogstaver",45);
 
         /*
         Skal måske bruge dette også - Son
@@ -28,20 +31,28 @@ public class EmployeeController {
         sc.nextLine();
         */
 
-        System.out.println("Efternavn på medabejder: ");
-        String employee_last_name = sc.nextLine();
-        //child.setChildFirstName(firstName);
 
-        System.out.println("Jobstilling: ");
+        //System.out.println("Efternavn på medabejder: ");
+        //String employee_last_name = sc.nextLine();
+        //child.setChildFirstName(firstName);
+        String employee_last_name = uc.readName("Efternavn på medarbejder:","Indtast et gyldigt navn med bogstaver",45);
+
+       System.out.println("Jobstilling: ");
         String employee_title = sc.nextLine();
         //child.setChildFirstName(lastName);
+        //String employee_title= uc.readName("Jobstilling på medarbejder:","Indtast et gyldigt navn med bogstaver",45);
 
-        System.out.println("Telefonnummer: ");
-        String employee_phone_number = sc.nextLine();
+
+        //System.out.println("Telefonnummer: ");
+        //String employee_phone_number = sc.nextLine();
         //Stue s;
+        String employee_phone_number = uc.readPhoneNumber("Telefonnummer", "Intast venligst 8 cifret nummer");
 
-        System.out.println("Email: ");
-        String employee_email = sc.nextLine();
+
+        //System.out.println("Email: ");
+        //String employee_email = sc.nextLine();
+        String employee_email= uc.readEmail("Email på medarbejder:","Indtast et gyldigt mail ",45);
+
 
         System.out.println("Vagtplannummer: ");
         int workplan_id = sc.nextInt();
@@ -63,29 +74,39 @@ public class EmployeeController {
         int employee_id = sc.nextInt();
         sc.nextLine();
 
-        System.out.println("Fornavn på medarbejder: ");
-        String employee_first_name = sc.nextLine();
 
-        System.out.println("Efternavn på medabejder: ");
-        String employee_last_name = sc.nextLine();
+        //System.out.println("Fornavn på medarbejder: ");
+        //String employee_first_name = sc.nextLine();
+        String employee_first_name = uc.readName("Fornavn på medarbejder:","Indtast et gyldigt navn med bogstaver",45);
+
+
+        //System.out.println("Efternavn på medabejder: ");
+        //String employee_last_name = sc.nextLine();
         //child.setChildFirstName(firstName);
+        String employee_last_name= uc.readName("Efternavn på medarbejder:","Indtast et gyldigt navn med bogstaver",45);
 
-        System.out.println("Jobstilling: ");
-        String employee_title = sc.nextLine();
+
+       System.out.println("Jobstilling: ");
+       // String employee_title = sc.nextLine();
         //child.setChildFirstName(lastName);
+        String employee_title= uc.readName("Jobstilling på medarbejder:","Indtast et gyldigt navn med bogstaver",45);
+
 
         System.out.println("Telefonnummer: ");
         String employee_phone_number = sc.nextLine();
         //Stue s;
 
-        System.out.println("Email: ");
-        String employee_email = sc.nextLine();
+       // System.out.println("Email: ");
+        //String employee_email = sc.nextLine();
+        String employee_email= uc.readEmail("Email på medarbejder:","Indtast et gyldigt mail ",45);
 
         System.out.println("Vagtplannummer: ");
         int workplan_id = sc.nextInt();
 
         System.out.println("Adresse: ");
         int address_id = sc.nextInt();
+
+
         Employee employee = new Employee(employee_id, employee_first_name, employee_last_name,employee_title, employee_phone_number, employee_email,workplan_id, address_id);
         es.updateEmployee(employee);
     }

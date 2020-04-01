@@ -136,7 +136,7 @@ public class UserController {
         }
     }
 
-    public int readPhoneNumber(String msg, String errmsg) {
+    public String readPhoneNumber(String msg, String errmsg) {
         Scanner reader = new Scanner(System.in);
         PhoneNumberValidator v = new PhoneNumberValidator();
         while (true) {
@@ -144,7 +144,7 @@ public class UserController {
                 System.out.println(msg);
                 String input = reader.nextLine();
                 if (v.isPhoneNumberValid(input)){
-                    return Integer.parseInt(input);
+                    return (input);
                 }
                 else throw new InputMismatchException();
             } catch (InputMismatchException e) {
