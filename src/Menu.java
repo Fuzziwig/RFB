@@ -6,10 +6,10 @@ import Controllers.ParentController;
 
 public class Menu {
 
-    ChildController cc = new ChildController();
-    EmployeeController ec = new EmployeeController();
-    ParentController pc = new ParentController();
-    Login login = new Login();
+    //ChildController cc = new ChildController();
+    //EmployeeController ec = new EmployeeController();
+    //ParentController pc = new ParentController();
+    //Login login = new Login();
     Scanner sc = new Scanner(System.in);
     int menu;
     int valg;
@@ -20,11 +20,12 @@ public class Menu {
         System.out.println("1: Børn");
         System.out.println("2: Medarbejdere");
         System.out.println("3: Telefonliste");
-        System.out.println("3: Log ud");
+        System.out.println("4: Log ud");
         menu = inputInt(1,4);
 
         switch (menu){
             case 1:
+                ChildController cc = new ChildController();
                 System.out.println("1: Indskriv nyt barn");
                 System.out.println("2: Se liste over børn");
                 System.out.println("3: Tilbage til hovedmenu");
@@ -59,6 +60,7 @@ public class Menu {
                 }
                 break;
             case 2:
+                EmployeeController ec = new EmployeeController();
                 System.out.println("1: Se liste over medarbejdere");
                 System.out.println("2: Opret ny medarbejder");
                 System.out.println("3: Vagtplan");
@@ -93,15 +95,24 @@ public class Menu {
                 }
                 break;
             case 3:
+                ParentController pc = new ParentController();
                 pc.readParent();
                 break;
             case 4:
-                login.run();
-                break;
+                //return;
         }
     }
-    public void employeeMenu(){
+    public void employeeMenu()throws SQLException {
+            System.out.println("Velkommen Medarbejder");
+            System.out.println("1: Børn");
+            System.out.println("2: Medarbejdere");
+            System.out.println("3: Telefonliste");
+            System.out.println("3: Log ud");
+            menu = inputInt(1,4);
 
+            switch (menu) {
+                case 1:
+            }
     }
     private int inputInt(int minValue, int maxValue) {
         int input = -1;
