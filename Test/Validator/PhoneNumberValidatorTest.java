@@ -2,6 +2,8 @@ package Validator;
 
 import org.junit.jupiter.api.Test;
 
+import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PhoneNumberValidatorTest {

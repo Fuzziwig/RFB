@@ -28,6 +28,19 @@ public class ChildRepository {
         preparedStatement.close();
     }
 
+    public ResultSet readOneChild(int cpr) throws SQLException {
+        String sql = "SELECT * FROM rfb.children_table WHERE cpr_nr =" + cpr;
+        Statement stmt = con.createStatement();
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
     //Execute a query
     public ResultSet readChildren() throws SQLException {
         String sql = "SELECT * FROM rfb.children_table";

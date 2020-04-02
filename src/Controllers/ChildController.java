@@ -76,6 +76,10 @@ public class ChildController {
         cs.createChild(child);
     }
 
+    public void readOneChild(int cpr) throws SQLException {
+        cs.readOneChild(cpr);
+    }
+
     public void readChildren() throws SQLException {
         cs.readChildren();
     }

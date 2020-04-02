@@ -10,8 +10,15 @@ import java.sql.SQLException;
 public class EmployeeService {
     EmployeeRepository er = new EmployeeRepository();
 
-    public void createEmployee(Employee employee) throws SQLException {
-        er.createEmployee(employee.getEmployee_id(), employee.getEmployee_first_name(), employee.getEmployee_last_name(), employee.getEmployee_title(), employee.getEmployee_phone_number(), employee.getEmployee_email(), employee.getWorkplan_id(), employee.getAddress_id());
+    public void createEmployee(Employee employee)  {
+        try {
+            er.createEmployee(employee.getEmployee_id(), employee.getEmployee_first_name(), employee.getEmployee_last_name(), employee.getEmployee_title(), employee.getEmployee_phone_number(), employee.getEmployee_email(), employee.getWorkplan_id(), employee.getAddress_id());
+        }catch (SQLException e){
+            System.out.println("problem med connetion");
+            System.out.println(e.getSQLState());
+            System.out.println(e.getErrorCode());
+
+        }
     }
 
     public void readEmployee() throws SQLException {

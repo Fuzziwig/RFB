@@ -9,7 +9,10 @@ import java.util.Scanner;
 public class RFBSystem {
 
     public static void main(String[] args) throws SQLException {
-        boolean isRunning = true;
+        Login login = new Login();
+        login.run();
+        /*boolean isRunning = true;
+
         ChildController childController = new ChildController();
         ParentController pc = new ParentController();
         EmployeeController ec = new EmployeeController();
@@ -34,8 +37,9 @@ public class RFBSystem {
                     break;
                 case 2:
                     //childController.readChildren();
-                    ec.readEmployee();
+                    //ec.readEmployee();
                     //pc.readParent();
+                    childController.readOneChild(101010);
                     break;
                 case 3:
                     //childController.updateChild();
@@ -56,5 +60,6 @@ public class RFBSystem {
                     break;
             }
         }
+        */
     }
 }
