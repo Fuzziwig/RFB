@@ -21,10 +21,12 @@ public class Login {
         ResultSet rs = ar.readAccount();
 
         while(rs.next()) {
-            if (user.equals(rs.getString(1)) && password.equals(rs.getString(2))) {
+            if (user.equals(rs.getString(1)) && user.equals("admin")&& password.equals(rs.getString(2))) {
                 menu.adminMenu();
             }
-
+            else if(user.equals(rs.getString(1)) && password.equals(rs.getString(2))) {
+                menu.employeeMenu();
+            }
         }
     }
 }
