@@ -76,8 +76,13 @@ public class ChildController {
         cs.createChild(child);
     }
 
-    public void readOneChild(int cpr) throws SQLException {
-        cs.readOneChild(cpr);
+    public void readOneChild() throws SQLException {
+        Scanner sc = new Scanner(System.in);
+
+        //System.out.println("CPR nr på barn: ");
+        //int cprNr = sc.nextInt();
+        int cprNr = uc.readCPR("CPR nr på barn: ", "Indtast et gyldigt CPR nr (format : 2312182525)");
+        cs.readOneChild(cprNr);
     }
 
     public void readChildren() throws SQLException {

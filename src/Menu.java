@@ -39,17 +39,20 @@ public class Menu {
                         cc.readChildren();
 
                         System.out.println("1: Opdater information om barn");
-                        System.out.println("2: Slet barn");
-                        System.out.println("3: Tilbage til hovedmenu");
-                        valg2 = inputInt(1,3);
+                        System.out.println("2: Se specifikt barn indtast cpr nr");
+                        System.out.println("3: Slet barn");
+                        System.out.println("4: Tilbage til hovedmenu");
+                        valg2 = inputInt(1,4);
                         switch (valg2) {
                             case 1:
                                 cc.updateChild();
                                 break;
                             case 2:
+                                cc.readOneChild();
+                            case 3:
                                 cc.deleteChild();
                                 break;
-                            case 3:
+                            case 4:
                                 adminMenu();
                                 break;
                         }
